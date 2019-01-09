@@ -19,6 +19,9 @@ class Crawler:
     def pre_process(self): pass
     def post_process(self): pass
 
+    def __del__(self):
+        self.post_process()
+
     @abc.abstractmethod
     def process(self):
         pass
